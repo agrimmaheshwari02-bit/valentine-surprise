@@ -1,0 +1,1210 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Valentine Surprise Pages | Make Them Feel Special</title>
+
+    <meta name="description" content="Personalized romantic surprise pages for Valentine's Day. Choose from 3 tiers of unforgettable experiences.">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+        body {
+
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+            background: #0a0a0a;
+
+            color: white;
+
+            line-height: 1.6;
+
+        }
+
+        /* Hero Section */
+
+        .hero {
+
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 40px 20px;
+
+            text-align: center;
+
+        }
+
+        .hero h1 {
+
+            font-size: clamp(36px, 8vw, 64px);
+
+            font-weight: 700;
+
+            margin-bottom: 24px;
+
+            line-height: 1.2;
+
+        }
+
+        .hero-subtitle {
+
+            font-size: clamp(18px, 4vw, 24px);
+
+            margin-bottom: 40px;
+
+            opacity: 0.95;
+
+            max-width: 700px;
+
+            line-height: 1.5;
+
+        }
+
+        .hero-cta {
+
+            display: inline-block;
+
+            padding: 18px 48px;
+
+            background: white;
+
+            color: #667eea;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            transition: all 0.3s;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+            margin: 10px;
+
+        }
+
+        .hero-cta:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+        }
+
+        .hero-cta.secondary {
+
+            background: transparent;
+
+            border: 2px solid white;
+
+            color: white;
+
+        }
+
+        .hero-cta.secondary:hover {
+
+            background: rgba(255, 255, 255, 0.1);
+
+        }
+
+        .scroll-hint {
+
+            margin-top: 60px;
+
+            font-size: 14px;
+
+            opacity: 0.7;
+
+            animation: bounce 2s infinite;
+
+        }
+
+        @keyframes bounce {
+
+            0%, 100% { transform: translateY(0); }
+
+            50% { transform: translateY(-10px); }
+
+        }
+
+        /* Pricing Section */
+
+        .pricing-section {
+
+            padding: 100px 20px;
+
+            background: #0a0a0a;
+
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            font-size: clamp(32px, 6vw, 48px);
+
+            margin-bottom: 16px;
+
+            font-weight: 700;
+
+        }
+
+        .section-subtitle {
+
+            text-align: center;
+
+            font-size: 18px;
+
+            color: #999;
+
+            margin-bottom: 60px;
+
+        }
+
+        .pricing-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 32px;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+
+        }
+
+        .pricing-card {
+
+            background: #1a1a1a;
+
+            border-radius: 24px;
+
+            padding: 40px;
+
+            position: relative;
+
+            border: 2px solid #2a2a2a;
+
+            transition: all 0.3s;
+
+        }
+
+        .pricing-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: #ff6b9d;
+
+            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
+
+        }
+
+        .pricing-card.popular {
+
+            border-color: #ff6b9d;
+
+            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.2);
+
+            transform: scale(1.05);
+
+        }
+
+        .pricing-card.popular:hover {
+
+            transform: scale(1.05) translateY(-8px);
+
+        }
+
+        .popular-badge {
+
+            position: absolute;
+
+            top: -12px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background: linear-gradient(135deg, #ff6b9d 0%, #ffa5c0 100%);
+
+            color: white;
+
+            padding: 6px 20px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+        }
+
+        .tier-name {
+
+            font-size: 14px;
+
+            color: #ff6b9d;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 12px;
+
+        }
+
+        .tier-title {
+
+            font-size: 28px;
+
+            font-weight: 700;
+
+            margin-bottom: 16px;
+
+        }
+
+        .tier-price {
+
+            font-size: 48px;
+
+            font-weight: 700;
+
+            margin-bottom: 8px;
+
+        }
+
+        .tier-price span {
+
+            font-size: 20px;
+
+            color: #999;
+
+        }
+
+        .tier-delivery {
+
+            font-size: 14px;
+
+            color: #999;
+
+            margin-bottom: 32px;
+
+        }
+
+        .tier-features {
+
+            list-style: none;
+
+            margin-bottom: 32px;
+
+        }
+
+        .tier-features li {
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #2a2a2a;
+
+            display: flex;
+
+            align-items: center;
+
+            font-size: 15px;
+
+        }
+
+        .tier-features li:last-child {
+
+            border-bottom: none;
+
+        }
+
+        .tier-features li::before {
+
+            content: '✓';
+
+            color: #ff6b9d;
+
+            font-weight: 700;
+
+            margin-right: 12px;
+
+            font-size: 18px;
+
+        }
+
+        .tier-cta {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 16px;
+
+            background: #ff6b9d;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            text-align: center;
+
+            transition: all 0.3s;
+
+        }
+
+        .tier-cta:hover {
+
+            background: #ffa5c0;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+
+        }
+
+        .tier-demo {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 12px;
+
+            margin-top: 12px;
+
+            background: transparent;
+
+            color: #ff6b9d;
+
+            text-decoration: none;
+
+            border: 2px solid #ff6b9d;
+
+            border-radius: 12px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            text-align: center;
+
+            transition: all 0.3s;
+
+        }
+
+        .tier-demo:hover {
+
+            background: rgba(255, 107, 157, 0.1);
+
+            transform: translateY(-2px);
+
+        }
+
+        /* Comparison Table */
+
+        .comparison-section {
+
+            padding: 100px 20px;
+
+            background: #0f0f0f;
+
+        }
+
+        .comparison-table {
+
+            max-width: 1000px;
+
+            margin: 0 auto;
+
+            background: #1a1a1a;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+        }
+
+        .comparison-table table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+        }
+
+        .comparison-table th,
+
+        .comparison-table td {
+
+            padding: 20px;
+
+            text-align: left;
+
+            border-bottom: 1px solid #2a2a2a;
+
+        }
+
+        .comparison-table th {
+
+            background: #0a0a0a;
+
+            font-weight: 600;
+
+            text-align: center;
+
+        }
+
+        .comparison-table td:first-child {
+
+            font-weight: 500;
+
+        }
+
+        .comparison-table td:not(:first-child) {
+
+            text-align: center;
+
+        }
+
+        .check {
+
+            color: #ff6b9d;
+
+            font-size: 20px;
+
+        }
+
+        .cross {
+
+            color: #666;
+
+            font-size: 20px;
+
+        }
+
+        /* FAQ Section */
+
+        .faq-section {
+
+            padding: 100px 20px;
+
+            background: #0a0a0a;
+
+        }
+
+        .faq-container {
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+        }
+
+        .faq-item {
+
+            background: #1a1a1a;
+
+            border-radius: 12px;
+
+            padding: 24px;
+
+            margin-bottom: 16px;
+
+        }
+
+        .faq-question {
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            margin-bottom: 12px;
+
+        }
+
+        .faq-answer {
+
+            color: #999;
+
+            line-height: 1.8;
+
+        }
+
+        /* Social Proof */
+
+        .social-proof {
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background: #0f0f0f;
+
+        }
+
+        .social-proof h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .stats {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 60px;
+
+            flex-wrap: wrap;
+
+            margin-top: 40px;
+
+        }
+
+        .stat {
+
+            text-align: center;
+
+        }
+
+        .stat-number {
+
+            font-size: 48px;
+
+            font-weight: 700;
+
+            color: #ff6b9d;
+
+        }
+
+        .stat-label {
+
+            font-size: 14px;
+
+            color: #999;
+
+            margin-top: 8px;
+
+        }
+
+        /* Footer */
+
+        footer {
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            background: #0a0a0a;
+
+            color: #999;
+
+            font-size: 14px;
+
+        }
+
+        footer a {
+
+            color: #ff6b9d;
+
+            text-decoration: none;
+
+        }
+
+        footer a:hover {
+
+            text-decoration: underline;
+
+        }
+
+        /* Mobile Responsive */
+
+        @media (max-width: 768px) {
+
+            .pricing-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .pricing-card.popular {
+
+                transform: scale(1);
+
+            }
+
+            .pricing-card.popular:hover {
+
+                transform: scale(1) translateY(-8px);
+
+            }
+
+            .comparison-table {
+
+                overflow-x: auto;
+
+            }
+
+            .stats {
+
+                gap: 40px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <h1>Make Them Feel Like the Main Character</h1>
+
+        <p class="hero-subtitle">
+
+            A personalized surprise webpage that shows you actually tried.
+
+            Because they deserve more than just flowers.
+
+        </p>
+
+        <div>
+
+            <a href="#pricing" class="hero-cta">See Pricing</a>
+
+            <a href="demo/tier-b.html" class="hero-cta secondary" target="_blank">See Example</a>
+
+        </div>
+
+        <div class="scroll-hint">↓ Scroll to explore ↓</div>
+
+    </section>
+
+    <!-- Pricing Section -->
+
+    <section id="pricing" class="pricing-section">
+
+        <h2 class="section-title">Choose Your Experience</h2>
+
+        <p class="section-subtitle">From simple & sweet to absolutely unforgettable</p>
+
+        <div class="pricing-grid">
+
+            <!-- Tier A: Quick Heart -->
+
+            <div class="pricing-card">
+
+                <div class="tier-name">Tier A</div>
+
+                <h3 class="tier-title">Quick Heart</h3>
+
+                <div class="tier-price">₹299 <span>/page</span></div>
+
+                <p class="tier-delivery">Delivered in 48 hours</p>
+
+                <ul class="tier-features">
+
+                    <li>Personalized welcome screen</li>
+
+                    <li>Romantic message (150 words)</li>
+
+                    <li>1 special photo</li>
+
+                    <li>Valentine's question</li>
+
+                    <li>Cinematic animations</li>
+
+                    <li>Mobile-optimized</li>
+
+                    <li>Shareable link</li>
+
+                </ul>
+
+                <!-- CUSTOMIZATION: Replace 919876543210 with your WhatsApp number -->
+
+                <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20order%20a%20Valentine%20Surprise%20Page%20%F0%9F%92%8C%0A%0A*Tier:*%20A%20-%20Quick%20Heart%0A*Price:*%20%E2%82%B9299%0A%0AI%27d%20like%20to%20proceed!" class="tier-cta" target="_blank">Order Quick Heart</a>
+
+                <!-- <a href="demo/tier-a.html" class="tier-demo" target="_blank">View Demo</a> -->
+
+            </div>
+
+            <!-- Tier B: Signature Edition (MOST POPULAR) -->
+
+            <div class="pricing-card popular">
+
+                <div class="popular-badge">★ Most Popular ★</div>
+
+                <div class="tier-name">Tier B</div>
+
+                <h3 class="tier-title">Signature Edition</h3>
+
+                <div class="tier-price">₹599 <span>/page</span></div>
+
+                <p class="tier-delivery">Delivered in 48 hours</p>
+
+                <ul class="tier-features">
+
+                    <li><strong>Everything in Tier A, plus:</strong></li>
+
+                    <li>Photo gallery (3-5 photos)</li>
+
+                    <li>Relationship timeline</li>
+
+                    <li>Date reveal section</li>
+
+                    <li>Background music</li>
+
+                    <li>Extended message (300 words)</li>
+
+                    <li>Custom color themes</li>
+
+                    <li>Premium animations</li>
+
+                </ul>
+
+                <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20order%20a%20Valentine%20Surprise%20Page%20%F0%9F%92%8C%0A%0A*Tier:*%20B%20-%20Signature%20Edition%20%E2%AD%90%0A*Price:*%20%E2%82%B9599%0A%0AI%27d%20like%20to%20proceed!" class="tier-cta" target="_blank">Order Signature Edition</a>
+
+                <!-- <a href="demo/tier-b.html" class="tier-demo" target="_blank">View Demo</a> -->
+
+            </div>
+
+            <!-- Tier C: Unforgettable Edition -->
+
+            <div class="pricing-card">
+
+                <div class="tier-name">Tier C</div>
+
+                <h3 class="tier-title">Unforgettable Edition</h3>
+
+                <div class="tier-price">₹999 <span>/page</span></div>
+
+                <p class="tier-delivery">Delivered in 48 hours</p>
+
+                <ul class="tier-features">
+
+                    <li><strong>Everything in Tier B, plus:</strong></li>
+
+                    <li>Video message integration</li>
+
+                    <li>Interactive reveal cards</li>
+
+                    <li>Countdown timer to date</li>
+
+                    <li>Gift/surprise reveal section</li>
+
+                    <li>Floating effects & parallax</li>
+
+                    <li>Extended timeline (7+ moments)</li>
+
+                    <li>Priority support</li>
+
+                </ul>
+
+                <a href="https://wa.me/919876543210?text=Hi!%20I%20want%20to%20order%20a%20Valentine%20Surprise%20Page%20%F0%9F%92%8C%0A%0A*Tier:*%20C%20-%20Unforgettable%20Edition%20%F0%9F%8C%9F%0A*Price:*%20%E2%82%B9999%0A%0AI%27d%20like%20to%20proceed!" class="tier-cta" target="_blank">Order Unforgettable Edition</a>
+
+                <!-- <a href="demo/tier-c.html" class="tier-demo" target="_blank">View Demo</a> -->
+
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; color: #999;">
+
+            <p>💨 Need it faster? <strong style="color: white;">Rush delivery (24h)</strong> available for +₹200</p>
+
+            <p style="margin-top: 8px; font-size: 14px;">Just mention it when ordering</p>
+
+        </div>
+
+    </section>
+
+    <!-- Comparison Table -->
+
+    <section class="comparison-section">
+
+        <h2 class="section-title">Feature Comparison</h2>
+
+        <p class="section-subtitle">See what's included in each tier</p>
+
+        <div class="comparison-table">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Feature</th>
+
+                        <th>Quick Heart<br>₹299</th>
+
+                        <th>Signature<br>₹599</th>
+
+                        <th>Unforgettable<br>₹999</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Personalized welcome</td>
+
+                        <td><span class="check">✓</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Romantic message</td>
+
+                        <td>150 words</td>
+
+                        <td>300 words</td>
+
+                        <td>Unlimited</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Photo gallery</td>
+
+                        <td>1 photo</td>
+
+                        <td>3-5 photos</td>
+
+                        <td>5+ photos</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Relationship timeline</td>
+
+                        <td><span class="cross">—</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                        <td><span class="check">✓✓</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Background music</td>
+
+                        <td><span class="cross">—</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Date reveal</td>
+
+                        <td><span class="cross">—</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Video message</td>
+
+                        <td><span class="cross">—</span></td>
+
+                        <td><span class="cross">—</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Interactive elements</td>
+
+                        <td><span class="cross">—</span></td>
+
+                        <td><span class="cross">—</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Countdown timer</td>
+
+                        <td><span class="cross">—</span></td>
+
+                        <td><span class="cross">—</span></td>
+
+                        <td><span class="check">✓</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Animations</td>
+
+                        <td>Basic</td>
+
+                        <td>Premium</td>
+
+                        <td>Advanced</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Delivery time</td>
+
+                        <td>48 hours</td>
+
+                        <td>48 hours</td>
+
+                        <td>48 hours</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Revisions</td>
+
+                        <td>Minor edits</td>
+
+                        <td>1 round</td>
+
+                        <td>2 rounds</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- Social Proof -->
+
+    <section class="social-proof">
+
+        <h3>Join Happy Couples Making Memories</h3>
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <div class="stat-number">50+</div>
+
+                <div class="stat-label">Pages Delivered</div>
+
+            </div>
+
+            <div class="stat">
+
+                <div class="stat-number">4.9★</div>
+
+                <div class="stat-label">Average Rating</div>
+
+            </div>
+
+            <div class="stat">
+
+                <div class="stat-number">48h</div>
+
+                <div class="stat-label">Fast Delivery</div>
+
+            </div>
+
+        </div>
+
+        <p style="margin-top: 40px; color: #999;">✓ 100% Satisfaction Guaranteed • Free Minor Edits</p>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="faq-section">
+
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <p class="section-subtitle">Everything you need to know</p>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+
+                <div class="faq-question">How does ordering work?</div>
+
+                <div class="faq-answer">Click your preferred tier, WhatsApp opens with a pre-filled message. We'll send you our UPI QR code, then a form to fill with your details (names, message, photos). We build your page and deliver within 48 hours!</div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <div class="faq-question">What information do I need to provide?</div>
+
+                <div class="faq-answer">Partner's name, your personal message (or we can help write it!), photos, and the question you want to ask. We'll guide you through a simple form after payment.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <div class="faq-question">Can I see a preview before delivery?</div>
+
+                <div class="faq-answer">For Tier B and C, yes! We'll send a preview for your approval. Tier A gets final quality check before delivery.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <div class="faq-question">What if I need changes?</div>
+
+                <div class="faq-answer">Minor edits (typos, spelling) are always free! Major changes depend on your tier. Tier B gets 1 round, Tier C gets 2 rounds of revisions.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <div class="faq-question">How do I share it with them?</div>
+
+                <div class="faq-answer">You get a unique URL link. Share it via WhatsApp, text, or however you want! We recommend: "Open this when you're alone... someone made something for you 😊"</div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <div class="faq-question">Can I order for a future date?</div>
+
+                <div class="faq-answer">Yes! Let us know your preferred delivery date when ordering. We'll make sure you get it in time.</div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <div class="faq-question">What if they don't like it?</div>
+
+                <div class="faq-answer">Hasn't happened yet! 😊 But we offer 100% satisfaction guarantee. If you're not happy, we'll fix it or refund you.</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Final CTA -->
+
+    <section class="hero" style="min-height: 60vh;">
+
+        <h2 style="font-size: clamp(32px, 6vw, 48px); margin-bottom: 24px;">Ready to Make Them Smile?</h2>
+
+        <p style="font-size: 18px; max-width: 600px; margin-bottom: 40px; opacity: 0.9;">
+
+            Don't let Valentine's Day be just another day. Create something they'll never forget.
+
+        </p>
+
+        <div>
+
+            <a href="#pricing" class="hero-cta">Choose Your Tier</a>
+
+            <a href="demo/tier-b.html" class="hero-cta secondary" target="_blank">See Example First</a>
+
+        </div>
+
+        <p style="margin-top: 24px; font-size: 14px; opacity: 0.7;">
+
+            ⏰ Limited slots for Valentine's delivery • Order before it's too late!
+
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <!-- CUSTOMIZATION: Update your contact info -->
+
+        <p>Questions? WhatsApp us at <a href="https://wa.me/919876543210" target="_blank">+91 98765 43210</a></p>
+
+        <p style="margin-top: 12px;">Handcrafted with love • 100% Satisfaction Guaranteed</p>
+
+        <p style="margin-top: 20px; font-size: 12px; opacity: 0.6;">© 2024 Valentine Surprise Pages. All rights reserved.</p>
+
+    </footer>
+
+</body>
+
+</html>
+
