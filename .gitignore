@@ -1,0 +1,50 @@
+# OS Files
+
+.DS_Store
+
+Thumbs.db
+
+# Editor Files
+
+.vscode/
+
+.idea/
+
+*.swp
+
+*.swo
+
+# Customer Data (Keep private)
+
+customers/*/
+
+!customers/.gitkeep
+
+# Large Files
+
+*.psd
+
+*.ai
+
+*.sketch
+
+# Backup Files
+
+*.backup
+
+*.bak
+
+# Environment
+
+.env
+
+.env.local
+
+# Notes
+
+notes.txt
+
+todo.txt
+
+customer-info.txt
+
